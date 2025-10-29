@@ -20,3 +20,7 @@ jobs:
                   secret-ids: kais-test-keys
                   parse-json-secrets: true
             - run: printenv
+
+            - run: |
+                  test "$KAIS_TEST_KEYS_PRIVATE_KEY_PASSWORD" &&
+                  echo Length ${#KAIS_TEST_KEYS_PRIVATE_KEY_PASSWORD}
